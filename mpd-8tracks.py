@@ -117,10 +117,8 @@ for mix_url in mix_urls:
 
    # Asks if want to download songs
    while True:
-      try:
-         ans = raw_input("Download this playlist? [yn]\n> ")
-      except EOFError:
-         continue
+      sys.stdin = open('/dev/tty')
+      ans = raw_input("Download this playlist? [yn]\n> ")
 
       if (ans[0] == 'y'):
          for track_url, artist, name in infos:
